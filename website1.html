@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPT ELS & E-TECH</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-image: url("wallpaperflare.com_wallpaper.jpg");
+            color: white;
+            font-family: 'Poppins', sans-serif; /* Global font */
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Header */
+        .headerdiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Logo */
+        .logo {
+            width: 80px;  /* Increased size */
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .main {
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .headerdiv a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .headerdiv a:hover {
+            color: #ff9f00;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin: 50px 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .earthnlifesciences {
+            font-family: 'Georgia', serif; /* Change font to Georgia */
+            font-size: 50px;
+            font-weight: bold; /* Bold text */
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #ff9f00;
+            text-transform: uppercase;
+        }
+
+        .subheading {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 20px 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        /* Button */
+        .button {
+            margin: 20px;
+        }
+
+        .clickhere {
+            border-radius: 30px;
+            border: none;
+            height: 50px;
+            width: 200px;
+            background: linear-gradient(45deg, #ff9f00, #ffcc33);
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .clickhere:hover {
+            background: linear-gradient(45deg, #ffcc33, #ff9f00);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Group Members Section */
+        .grpmembers {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column; /* Added: Makes the layout more vertical for better alignment */
+            align-items: center; /* Added: Centers the content */
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            justify-content: center; /* Added: Centers the tiles horizontally */
+        }
+
+        .tile {
+            display: inline-block;
+            width: 300px;
+            border-radius: 15px;
+            margin-right: 20px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* Added: Centers text and images within the tile */
+            padding: 20px; /* Added: Gives more space inside each tile */
+        }
+
+        .tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .pfp {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%; /* Added: Makes the profile picture circular */
+            transition: transform 0.3s ease;
+        }
+
+        .tile:hover .pfp {
+            transform: scale(1.1);
+        }
+
+        .name {
+            padding: 10px;
+            font-size: 20px; /* Increased size for better visibility */
+            font-weight: bold;
+            color: #ff9f00;
+            letter-spacing: 1px; /* Added: Adds spacing between letters for aesthetics */
+            text-transform: uppercase; /* Added: Makes the name uppercase for emphasis */
+        }
+
+        .email {
+            padding: 10px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 1.6; /* Added: Adds more space between lines */
+        }
+
+        /* Carousel Navigation Buttons */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            font-size: 30px;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="headerdiv">
+        <div>
+            <img src="groupmembers/eaclogo.png" alt="Logo" class="logo"> <!-- Add your logo image -->
+        </div>
+        <div>
+            <p class="main">
+                CPT ELS & E-TECH
+            </p>
+        </div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <p class="earthnlifesciences">
+            EARTH AND LIFE SCIENCES
+        </p>
+        <p class="subheading">
+            This learning area is designed to provide a general 
+            background for the understanding of Earth Science and Biology.
+             It presents the history of the Earth through geologic time. 
+             It discusses the Earth's structure, composition, processed, 
+             issues, concerns, and problems pertaining to natural hazards 
+             are also included. It also deals with the basic principles 
+             and processes in the study of biology. It covers life 
+             processes and interactions at the cellular, organism, 
+             population, and ecosystem levels.
+        </p>
+        <div class="button">
+            <a href="CPT MITIGATION PLAN.pdf" target="_blank">
+                <button class="clickhere">Click here</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="grpmembers">
+        <div class="carousel-container">
+            <div class="tile">
+                <div class="img">
+                    <img class="pfp" src="groupmembers/df96664f-ac48-4924-ba1f-ece2d3594059.jpg" alt="Leader">
+                </div>
+                <div class="name">Mangundayao, Rianafe S.</div>
+                <div class="email">rianafe.mangundayao.mnl@eac.edu.ph</div>
+                <div class="contact">09088891056</div>
+            </div>
+
+            <div class="tile">
+                <div class="img">
+                    <img class="pfp" src="groupmembers/download.jpg" alt="Member 1">
+                </div>
+                <div class="name">Siddayao, Aedriene Sherllyze C.</div>
+                <div class="email">sherllyze.siddayao.mnl@eac.edu.ph</div>
+                <div class="contact">09054638864</div>
+            </div>
+
+            <div class="tile">
+                <div class="img">
+                    <img class="pfp" src="groupmembers/download (1).jpg" alt="Member 2">
+                </div>
+                <div class="name">Estrada, Samantha Nicole </div>
+                <div class="email">samanthanicole.estrada.mnl@eac.edu.ph</div>
+                <div class="contact">09684097588</div>
+            </div>
+
+            <div class="tile">
+                <div class="img">
+                    <img class="pfp" src="groupmembers/download (2).jpg" alt="Member 3">
+                </div>
+                <div class="name">Salazar, John Rommel</div>
+                <div class="email">johnrommel.salazar.mnl@eac.edu.ph</div>
+                <div class="contact">09482487549</div>
+            </div>
+
+        </div>
+        <button class="prev">‹</button>
+        <button class="next">›</button>
+    </div>
+
+</body>
+
+</html>
